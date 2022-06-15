@@ -8,12 +8,12 @@
 # if yes, go back to the beginning
 
 import os
-import webbrowser
-import os
+import sys
+import time
+import random
 import webbrowser
 import pipx
 import pipx.colors as colors # pipx.colors.red("text")
-
 
 print(pipx.colors.red("""
                                 ####################################################
@@ -23,10 +23,28 @@ print(pipx.colors.red("""
                                 #       Hopefully this will help your search!      #
                                 ####################################################
 """))
+def print_slow(str):
+    for letter in str:
+        sys.stdout.write(letter)
+        sys.stdout.flush()
+        time.sleep(0.1)
+
+print_slow("Another Slow Production. ")
+print()
+print()
+print()
+print()
 
 
+#Print word lawyers in Blue ascii terminal font.
+print(""" \033[1;34;40m
+                                   ░█░░░█▀█░█░█░█░█░█▀▀░█▀▄░█▀▀░░░█▀▀░█░█░█▀▀░█░█
+                                   ░█░░░█▀█░█▄█░░█░░█▀▀░█▀▄░▀▀█░░░▀▀█░█░█░█░░░█▀▄
+                                   ░▀▀▀░▀░▀░▀░▀░░▀░░▀▀▀░▀░▀░▀▀▀░░░▀▀▀░▀▀▀░▀▀▀░▀░▀
+""")
 
-print("Welcome to the lawyer contact dork tool")
+#Create a menu in yellow Ascii.
+print("\033[1;33;40m")
 
 city = input("What city are you looking for? ")
 state = input("What state are you looking for? ")
