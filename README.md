@@ -5,15 +5,14 @@
 ### Looking up attorneys is daunting. Then you have to find their contact buttons to send them an email.
 Hopefully this will cut down on your search and send time.
 
-To do:
-*How about a multi function option added to the menu
+The code got a MAJOR facelift this weekend and looks "prettier". The entire program will be getting a huge facelift as well after seeing a comment in another post. Here is the new look, I need to upload the code to git. I can't figure out how to center the ascii art, I suck.
 
-*will also take you to the bar association of the perspective state.
-1. To search their license status.
-2. To file a complaint.
-
-*Also to the ratings site.
-
-*Export and import a list of attorneys found in csv, pdf, or html.
-
-*Import them into mind mapping software.
+#### To do:
+How about a multi function option added to the menu?
+**The new tool will also include physicians, but with some new features added as well. The NEW version will be called: PSRT = The Professional Search and Report tool.
+**Features coming will:
+1. Look up attorney or physician by city, state, area of practice.
+2. Look up malpractice (doctor) or current bar status (attorney).
+3. Review lookup.
+4. Report malpractice (doctor) or ethics violation (bar association).
+5. Social media (Google, LI, Facebook) review page for that person if they have one. Because everyone deserves to be highlighted for their work.
