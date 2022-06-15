@@ -8,9 +8,8 @@
 # if yes, go back to the beginning
 
 import os
-import sys
 import time
-import random
+import sys
 import webbrowser
 import pipx
 import pipx.colors as colors # pipx.colors.red("text")
@@ -23,6 +22,7 @@ print(pipx.colors.red("""
                                 #       Hopefully this will help your search!      #
                                 ####################################################
 """))
+
 def print_slow(str):
     for letter in str:
         sys.stdout.write(letter)
@@ -34,7 +34,6 @@ print()
 print()
 print()
 print()
-
 
 #Print word lawyers in Blue ascii terminal font.
 print(""" \033[1;34;40m
