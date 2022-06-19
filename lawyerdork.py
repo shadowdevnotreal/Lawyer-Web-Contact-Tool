@@ -1,27 +1,48 @@
-# create google dork to look for attorneys in the US
-# ask user what state they are looking for
-# ask user what type of attorney they are looking for
-# ask user what type of search they are looking for
-# Open up a browser and search for the dork
-# print out the results
-# ask user if they want to search again
-# if yes, go back to the beginning
+# File: LawyerDork.py
+# Author: Slow
+# Date: 2022-06-19
 
 import os
-import time
 import sys
-import webbrowser
+import time
+import random
+import string
 import pipx
-import pipx.colors as colors # pipx.colors.red("text")
+import pipx.colors as colors
+import webbrowser
+import win32gui
+import win32con
+hwnd = win32gui.GetForegroundWindow()
+win32gui.ShowWindow(hwnd, win32con.SW_MAXIMIZE)
 
-print(pipx.colors.red("""
-                                ####################################################
-                                #     Welcome to the lawyer contact dork tool      #
-                                #          Because looking a lawyers sucks!        #
-                                # This will take you to most website contact forms #
-                                #       Hopefully this will help your search!      #
-                                ####################################################
-"""))
+
+
+# Colours
+W = "\033[0m"  # white = "\033[0m"
+R = "\033[31m" # Red = "\033[31m"
+G = "\033[32m" # Green = "\033[32m"
+O = "\033[33m" # Orange = "\033[33m"
+B = "\033[34m" # Blue = "\033[34m"
+Y = "\033[40m" # Yellow = "\033[40m"
+
+    
+
+
+def logo():
+    print(G + '''
+                                                    ####################################################
+                                                    #                                                  #
+                                                    #     Welcome to the lawyer contact dork tool      #
+                                                    #                                                  #
+                                                    #       Because looking for a lawyers sucks!       #
+                                                    #                                                  #
+                                                    # This will take you to most website contact forms #
+                                                    #                                                  #
+                                                    ####################################################
+''')
+    print(W)
+
+logo()
 
 def print_slow(str):
     for letter in str:
@@ -29,31 +50,38 @@ def print_slow(str):
         sys.stdout.flush()
         time.sleep(0.1)
 
+
 print_slow("Another Slow Production. ")
 print()
 print()
-print()
-print()
 
-#Print word lawyers in Blue ascii terminal font.
-print(""" \033[1;34;40m
-                                   ░█░░░█▀█░█░█░█░█░█▀▀░█▀▄░█▀▀░░░█▀▀░█░█░█▀▀░█░█
-                                   ░█░░░█▀█░█▄█░░█░░█▀▀░█▀▄░▀▀█░░░▀▀█░█░█░█░░░█▀▄
-                                   ░▀▀▀░▀░▀░▀░▀░░▀░░▀▀▀░▀░▀░▀▀▀░░░▀▀▀░▀▀▀░▀▀▀░▀░▀
-""")
+#Sleep timer
+time.sleep(4)
+#Clear screen
+os.system('cls')
 
-#Create a menu in yellow Ascii.
+# Print word in Blue ascii terminal font.
+print(B + '''
+              _                              _____                     _       __  __           _        ______                
+             | |                            / ____|                   | |     |  \/  |         | |      |  ____|               
+             | |     __ _ _   _  ___ _ __  | (___   ___  __ _ _ __ ___| |__   | \  / | __ _  __| | ___  | |__   __ _ ___ _   _ 
+             | |    / _` | | | |/ _ \ '__|  \___ \ / _ \/ _` | '__/ __| '_ \  | |\/| |/ _` |/ _` |/ _ \ |  __| / _` / __| | | |
+             | |___| (_| | |_| |  __/ |     ____) |  __/ (_| | | | (__| | | | | |  | | (_| | (_| |  __/ | |___| (_| \__ \ |_| |
+             |______\__,_|\__, |\___|_|    |_____/ \___|\__,_|_|  \___|_| |_| |_|  |_|\__,_|\__,_|\___| |______\__,_|___/\__, |
+                           __/ |                                                                                          __/ |
+                          |___/                                                                                          |___/ 
+''')
+
+# Create a menu in yellow Ascii.
 print("\033[1;33;40m")
 
 city = input("What city are you looking for? ")
 state = input("What state are you looking for? ")
-attorney_type = input("What type of attorney are you looking for? ")
-contact = input("Type contact. ")
+practice = input("What type of attorney are you looking for? ")
 
-#dork = "site=lawyers+" + city + " " + state + "+" + attorney_type + "+" + contact_form
-dork = "inurl=contact+" "site=lawyers+" + city + " " + state + "+" + attorney_type + "+" + contact
-print(dork)
-print("Here are the results: ")  # print out the results
+# supress error str = input("group:"lawyer") | group:"attorney" | inurl:"contact" | inurl:"contact-us" + "city" + "state" + "practice"") #This is the dork.
+# "group:lawyer | group:attorney | inurl:contact | inurl:contact-us + input(city) + input(state) + input(practice)"
+
 ask = input("Would you like to open the dork in your browser? ")
 
 
@@ -63,7 +91,12 @@ def open_chrome():
 
 if ask == "yes":
     open_chrome()
-    webbrowser.open('https://www.google.com/search?q=' + dork)
+    webbrowser.open(
+        f"https://www.google.com/search?q=group:lawyer | group:attorney | inurl:contact | inurl:contact-us + {city}+{state}+{practice}")
+    print("Opening Google...")
     if ask == "no":
-        print("Thank you for using the dork tool")
-        os.system("exit")
+        print("Closing Google...")
+        time.sleep(1)
+
+# lawyer + group:attorney + inurl:contact + inurl:contact-us + input(city) + input(state) + input(practice)')
+
