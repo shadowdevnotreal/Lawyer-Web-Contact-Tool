@@ -20,9 +20,9 @@ How about a multi function option added to the menu?
 # To run in cloud shell:
 1. pip install pipx
 2. delete the following:
-   -import win32gui
-   -import win32con
-   -hwnd = win32gui.GetForegroundWindow()
-   -win32gui.ShowWindow(hwnd, win32con.SW_MAXIMIZE)
+3. import win32gui
+4. import win32con
+5. hwnd = win32gui.GetForegroundWindow()
+6. win32gui.ShowWindow(hwnd, win32con.SW_MAXIMIZE)
 
 # [![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.svg)](https://shell.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https://github.com/michaelnotadev/Lawyer-Web-Contact-Tool)
