@@ -18,10 +18,11 @@ How about a multi function option added to the menu?
 5. Social media (Google, LI, Facebook) review page for that person if they have one. Because everyone deserves to be highlighted for their work.
 
 # To run in cloud shell:
-pip install pipx
-delete the following:
+1. pip install pipx
+2. delete the following:
 import win32gui
 import win32con
 hwnd = win32gui.GetForegroundWindow()
 win32gui.ShowWindow(hwnd, win32con.SW_MAXIMIZE)
-[![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.svg)](https://shell.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https://github.com/michaelnotadev/Lawyer-Web-Contact-Tool)
+
+# [![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.svg)](https://shell.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https://github.com/michaelnotadev/Lawyer-Web-Contact-Tool)
