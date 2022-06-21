@@ -17,10 +17,10 @@ How about a multi function option added to the menu?
 4. Report ethics violation (bar association).
 5. Social media (Google, LI, Facebook) review page for that person if they have one. Because everyone deserves to be highlighted for their work.
 
-# To run in cloud shell:
+# To run in cloud shell (note: will not open web browser, will give you the dork to copy into google)
 1. pip install pipx
 2. delete the following:
-+ import web
++ import webbrowser
 + import win32gui
 + import win32con
 + hwnd = win32gui.GetForegroundWindow()
