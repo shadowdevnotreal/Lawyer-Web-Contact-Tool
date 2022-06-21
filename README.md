@@ -20,6 +20,7 @@ How about a multi function option added to the menu?
 # To run in cloud shell:
 1. pip install pipx
 2. delete the following:
++ import web
 + import win32gui
 + import win32con
 + hwnd = win32gui.GetForegroundWindow()
